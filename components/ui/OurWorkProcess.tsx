@@ -8,33 +8,8 @@ const OurWorkProcess = () => {
         <div className="bg-white dark:bg-black w-fit px-6 py-3 rounded-4xl">
           How we work
         </div>
-        <h4 className="text-6xl mt-8">4 Simple Steps</h4>
-        <div className="flex gap-8  mt-8">
-          <Image
-            src="/Feature4.svg"
-            width={280}
-            height={300}
-            alt="featured image"
-          />
-          <Image
-            src="/Feature4.svg"
-            width={280}
-            height={300}
-            alt="featured image"
-          />
-          <Image
-            src="/Feature4.svg"
-            width={280}
-            height={300}
-            alt="featured image"
-          />
-          <Image
-            src="/Feature4.svg"
-            width={280}
-            height={300}
-            alt="featured image"
-          />
-        </div>
+        <h4 className="text-5xl md:text-6xl mt-8">4 Simple Steps</h4>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mt-8"></div>
       </div>
     </section>
   );

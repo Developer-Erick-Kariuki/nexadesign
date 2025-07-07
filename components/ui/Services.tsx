@@ -9,7 +9,7 @@ const Services = () => {
           <div className="bg-white dark:bg-black w-fit px-6 py-3 rounded-4xl">
             Our Services
           </div>
-          <h4 className="text-6xl mt-8 max-w-md">
+          <h4 className="text-5xl md:text-6xl mt-8 max-w-md">
             We offer the best services in
           </h4>
         </div>

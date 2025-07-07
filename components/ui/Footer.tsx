@@ -6,8 +6,8 @@ import { IoMailUnread } from "react-icons/io5";
 
 const Footer = () => {
   return (
-    <footer className="w-full mt-16 bg-white dark:bg-black pt-20">
-      <div className="max-w-7xl w-full m-auto flex justify-between">
+    <footer className="w-full mt-16 bg-white dark:bg-black pt-20 px-6 md:px-10">
+      <div className="max-w-7xl w-full m-auto flex flex-col gap-4 justify-between">
         <div className="flex flex-col">
           <Image
             src="/logo.svg"
