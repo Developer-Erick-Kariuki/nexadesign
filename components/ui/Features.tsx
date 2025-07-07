@@ -38,7 +38,7 @@ const Features = () => {
               alt="featured image"
             />
             <div className="absolute  inset-0 bg-gradient-to-t from-black to-transparent "></div>
-            <div className="absolute  text-white px-4 py-2 bottom-4 z-50">
+            <div className="absolute  text-white px-4 py-2 bottom-4">
               <h2 className="text-3xl md:text-5xl mb-4">Tailored Solutions</h2>
               <p className="text-sm hidden  max-w-lg group-hover:flex ">
                 We understand that every business is unique. That’s why we
@@ -57,7 +57,7 @@ const Features = () => {
               alt="featured image"
             />
             <div className="absolute  inset-0 bg-gradient-to-t from-black to-transparent "></div>
-            <div className="absolute  text-white p-3 bottom-4 z-50">
+            <div className="absolute  text-white p-3 bottom-4">
               <h2 className="text-3xl md:text-5xl mb-4">Expert Team</h2>
               <p className="text-sm hidden  group-hover:flex ">
                 We understand that every business is unique. That’s why we
@@ -81,7 +81,7 @@ const Features = () => {
                 alt="featured image"
               />
               <div className="absolute  inset-0 bg-gradient-to-t from-black to-transparent "></div>
-              <div className="absolute  text-white px-4 py-6 bottom-0 z-50">
+              <div className="absolute  text-white px-4 py-6 bottom-0">
                 <h2 className="text-2xl md:text-4xl mb-4">{feature.title}</h2>
                 <p className="text-sm hidden max-w-md  group-hover:flex ">
                   {feature.text}

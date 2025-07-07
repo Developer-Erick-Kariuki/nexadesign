@@ -2,12 +2,12 @@
 import { FaLongArrowAltRight } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
 import { FaInstagram, FaPinterest } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaBars, FaXTwitter } from "react-icons/fa6";
 import { HiBars3BottomRight } from "react-icons/hi2";
 import { IoCloseSharp } from "react-icons/io5";
+import { useMenu } from "./ContextProvider";
 
 const sitemap = [
   { name: "Home", href: "#" },
@@ -18,28 +18,35 @@ const sitemap = [
 ];
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useMenu();
   return (
-    <header className="w-full max-w-7xl  px-3  m-auto">
-      <nav className="flex relative justify-between rounded-4xl bg-white dark:bg-black h-16 mt-4 px-8 items-center w-full">
+    <header className="w-full m-auto bg-[#acb8df] fixed top-0 z-50 dark:bg-black">
+      <nav className="flex relative  m-auto justify-between overflow-x-hidden max-w-7xl p-5 items-center w-full">
+        <div className="md:hidden flex">
+          {!isOpen && (
+            <span className="flex gap-2 items-center">
+              <FaBars size={24} onClick={() => setIsOpen(true)} />
+            </span>
+          )}
+        </div>
         <Link href="/">
           <Image
             src="/logo.svg"
-            width={100}
+            width={150}
             height={30}
             alt="logo"
             className="dark:flex hidden"
           />
           <Image
             src="/darklogo2.svg"
-            width={100}
+            width={150}
             height={30}
             alt="logo"
             className="dark:hidden"
           />
         </Link>
         <div className="hidden md:flex gap-4">
-          {sitemap.map((link) => (
+          {sitemap.map((link, i) => (
             <a key={link.name} href={link.href}>
               {link.name}
             </a>
@@ -59,29 +66,32 @@ const Header = () => {
             <FaXTwitter size={20} />
           </Link>
         </div>
-        <div className="md:hidden flex">
-          {!isOpen && (
-            <span className="flex gap-2">
-              menu{" "}
-              <HiBars3BottomRight size={32} onClick={() => setIsOpen(true)} />
-            </span>
-          )}
-        </div>
-        {/* mobile div */}
 
-        {isOpen && (
-          <div
-            className="h-full w-screen bg-black/70 cursor-not-allowed fixed inset-0"
-            onClick={() => setIsOpen(false)}
-          ></div>
-        )}
+        {/* mobile div */}
 
         <>
           <div
             className={`${
-              isOpen ? "translate-x-0" : "translate-x-full"
-            } transition-transform duration-300 ease-in-out flex flex-col justify-between md:hidden top-0 h-full py-10  z-50 bg-white dark:bg-black w-3/4 px-6  right-0 fixed gap-4`}
+              isOpen ? "translate-x-0" : "-translate-x-100"
+            } transition-transform duration-300 ease-in-out flex flex-col justify-between md:hidden top-0 h-full py-10  bg-white dark:bg-black px-6 w-3/4 left-0 z-50 fixed gap-4`}
           >
+            <div className="absolute top-6">
+              <Image
+                src="/logo.svg"
+                width={100}
+                height={30}
+                alt="logo"
+                className="dark:flex hidden"
+              />
+              <Image
+                src="/darklogo2.svg"
+                width={100}
+                height={30}
+                alt="logo"
+                className="dark:hidden"
+              />
+            </div>
+
             <span className="absolute right-12 top-6 flex items-center gap-2">
               Close
               <IoCloseSharp
@@ -122,6 +132,12 @@ const Header = () => {
             </div>
           </div>
         </>
+        {isOpen && (
+          <div
+            className="h-full w-full bg-black/70 fixed inset-0"
+            onClick={() => setIsOpen(false)}
+          ></div>
+        )}
       </nav>
     </header>
   );

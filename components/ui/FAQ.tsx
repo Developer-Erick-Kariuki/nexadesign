@@ -60,9 +60,7 @@ const FAQ = () => {
             ))}
           </div>
           <div className="flex p-4 flex-col justify-center rounded-4xl bg-white dark:bg-black px-4">
-            <h2 className="text-5xl max-w-md mb-4 font-semibold">
-              Still have a question?
-            </h2>
+            <h2 className="text-5xl max-w-md mb-4">Still have a question?</h2>
             <button className="bg-purple-600 w-fit px-5 py-3 text-white rounded-4xl ">
               Reach out to us
             </button>

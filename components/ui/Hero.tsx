@@ -1,10 +1,11 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 
 const Hero = () => {
   return (
-    <section className="mt-20 max-w-7xl m-auto w-full px-6 md:px-10">
-      <div className="flex flex-col md:flex-row w-full justify-between items-center">
+    <section className={`bg-[#acb8df] dark:bg-black m-auto w-full`}>
+      <div className="flex flex-col max-w-7xl m-auto mt-18 px-6 md:mt-0 md:px-0 pt-16 md:flex-row w-full justify-between items-center">
         <div className="flex flex-col">
           <h2 className="text-5xl md:text-6xl  max-w-xl mb-8">
             Make Designs that Engage, Delight and Connect
